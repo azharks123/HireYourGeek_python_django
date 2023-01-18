@@ -1,0 +1,26 @@
+{% extends 'coderbase.html' %} {% block content %}
+<h2 style="text-align: center; margin-top: 100px">Upliad Project File</h2>
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<table
+		style="
+			border: 10px solid gray;
+			border-radius: 20px;
+			width: 500px;
+			margin: auto;
+		"
+	>
+		<tr>
+			<td>Project File :</td>
+			<td>
+				<input type="file" class="form-control" name="file" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" class="form-control" value="Submit" />
+			</td>
+		</tr>
+	</table>
+</form>
+{% endblock %}

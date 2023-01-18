@@ -1,0 +1,89 @@
+
+
+
+
+    {% extends 'adminbase.html' %}
+    {% block content %}
+    <style>
+        th,td{
+            padding: 10px;
+        }
+        th{
+            background-color:steelblue;
+            color: white;
+        }
+        </style>
+        <div style="margin: 50px;">
+            <h1 style="margin: 10px;">Buyers</h1>
+            <table border="1" style="margin-top: 40px;margin-left: 80px;">
+            <tr>
+                <th>NAME</th>
+                <th>ADDRESS</th>
+                <th>Email</th>
+                <th>CONTACT</th>
+              
+             
+                <th colspan="2">ACTION</th>
+            </tr>
+        
+       {% for d in data %}
+          <tr>
+  
+            <td>{{d.1}}</td>
+            <td>{{d.2}}</td>
+            <td>{{d.3}}</td>
+            <td>{{d.4}}</td>
+           
+            {% comment %} <td><a href="../static{{d.8}}" download><img src="../static{{d.8}}" download="../static{{d.8}}" height="200px" width="200px"></a></td> 
+            <td><a href="../static{{d.9}}" download><img src="../static{{d.9}}" download="../static{{d.9}}" height="200px" width="200px"></a></td> 
+       {% endcomment %}
+                 
+               
+             
+                    <td><a href="/adminupdatebuyer?uemail={{d.3}}&&status=1" style="color:green">Approve</a></td>
+                 <td><a href="/adminupdatecust?uemail={{d.3}}&&status=-1" style="color:red">Reject</a></td>
+        
+        </tr>
+          {% endfor %}
+      
+            </table>
+        </div>
+
+
+        <div style="margin: 50px;">
+            <h1 style="margin: 10px;">Approved Buyers</h1>
+            <table border="1" style="margin-top: 40px;margin-left: 80px;">
+            <tr>
+                <th>NAME</th>
+                <th>ADDRESS</th>
+                <th>Email</th>
+                <th>CONTACT</th>
+              
+              
+                <th colspan="2">ACTION</th>
+            </tr>
+        
+       {% for d in data1 %}
+          <tr>
+  
+            <td>{{d.1}}</td>
+            <td>{{d.2}}</td>
+            <td>{{d.3}}</td>
+            <td>{{d.4}}</td>
+          
+            {% comment %} <td><a href="../static{{d.8}}" download><img src="../static{{d.8}}" download="../static{{d.8}}" height="200px" width="200px"></a></td> 
+            <td><a href="../static{{d.9}}" download><img src="../static{{d.9}}" download="../static{{d.9}}" height="200px" width="200px"></a></td> 
+       {% endcomment %}
+                 
+               
+             
+                    <!-- <td><a href="/adminupdatecust?uemail={{d.3}}&&status=1">Approve</a></td> -->
+                 <td><a href="/adminupdatecust?uemail={{d.3}}&&status=-1" style="color:red">Reject</a></td>
+        
+        </tr>
+          {% endfor %}
+      
+            </table>
+        </div>
+       {% endblock %}
+    

@@ -1,0 +1,72 @@
+
+
+
+
+    {% extends 'buyerbase.html' %}
+    {% block content %}
+    <style>
+        th,td{
+            padding: 10px;
+        }
+        th{
+            background-color:steelblue;
+            color: white;
+        }
+        </style>
+        <div style="margin: 50px;">
+            <h1 style="margin: 10px;">Biddings</h1>
+            <table border="1" style="margin-top: 40px;margin-left: 80px;">
+            <tr>
+                <th>PHOTO</th>
+                <th>CODER NAME</th>
+                
+                <th>EMAIL</th>
+                <th>CONTACT</th>
+                <th>QUALIFICATION</th>
+                <th>EXPERIENCE</th>
+                <th>BIODATA</th>
+               
+                <th>DUE DATE</th>
+              
+                <th>AMOUNT</th>
+                <th>STATUS</th>
+              
+             
+                {% comment %} <th colspan="2">ACTION</th> {% endcomment %}
+            </tr>
+        
+       {% for d in data %}
+          <tr>
+            <td><a href="../static{{d.8}}" download><img src="../static{{d.8}}" download="../static{{d.8}}" height="200px" width="200px"></a></td> 
+          
+            <td>{{d.1}}</td>
+           
+            <td>{{d.3}}</td>
+            <td>{{d.4}}</td>
+            <td>{{d.5}}</td>
+            <td>{{d.6}}</td>
+           
+
+       <td><a href="../static{{d.7}}" download><img src="../static{{d.7}}" download="../static{{d.7}}" height="200px" width="200px"></a></td> 
+       <td>{{d.19}}</td> 
+       <td>{{d.20}}</td> 
+       <td>{{d.21}}</td>  
+       <td><a href="/buyerconformbid?rid={{d.9}}&&bidid={{d.16}}" style="color:red">Conform</a></td> 
+       {% comment %}      <td><a href="../static{{d.9}}" download><img src="../static{{d.9}}" download="../static{{d.9}}" height="200px" width="200px"></a></td> 
+       {% endcomment %}
+                 
+               
+             
+                    {% comment %} <td><a href="/adminupdatebuyer?uemail={{d.3}}&&status=1" style="color:green">Approve</a></td>
+                 <td><a href="/adminupdatecust?uemail={{d.3}}&&status=-1" style="color:red">Reject</a></td> {% endcomment %}
+        
+        </tr>
+          {% endfor %}
+      
+            </table>
+        </div>
+
+
+        </div>
+       {% endblock %}
+    

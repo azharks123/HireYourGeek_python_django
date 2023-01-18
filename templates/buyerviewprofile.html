@@ -1,0 +1,40 @@
+
+    {% extends 'buyerbase.html' %}
+    {% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>profile</title>
+    <style>
+    
+        td,th{
+            padding:15px;
+        }
+        </style>
+</head>
+<body>
+<h2 style="text-align:center;margin-top:100px"> PROFILE</h2>
+<form method="POST">
+
+{% for d in data %}
+<table style="margin-left:650px;border:10px solid gray;border-radius:20px;width:500px;margin-top:10px">
+
+    {% comment %} <td><a href="../static{{d.9}}" ><img src="../static{{d.9}}"  readonly height="200px" width="200px"></a></td>    {% endcomment %}
+   <tr><td> ID       :</td><td><input type="text" class="form-control" name="id" value="{{d.0}}" readonly></td></tr>
+    <tr><td> NAME     :</td><td><input type="text"  class="form-control" name="br" readonly value="{{d.1}}"></td></tr>
+    <tr><td>ADDRESS     :</td><td><textarea  class="form-control" name="br1" readonly  value="{{d.2}}">{{d.2}}</textarea></td></tr>
+    <tr><td>EMAIL     :</td><td><input type="text" class="form-control" name="ty" readonly value="{{d.3}}"></td></tr>
+    <tr><td>CONTACT     :</td><td><input type="text" class="form-control" name="d1" readonly value="{{d.4}}"></td></tr>
+  
+
+    
+    
+    {% comment %} <tr><td colspan="2" align="center"><input type="submit" name="upload3" class="btn btn-secondary" value="Update"></td></tr> {% endcomment %}
+ </table>
+ {% endfor %}
+ </form>
+{% endblock %}
+
+
+</body>
+</html>

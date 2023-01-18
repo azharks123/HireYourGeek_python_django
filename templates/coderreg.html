@@ -1,0 +1,88 @@
+{% extends 'commonbase.html' %}
+{% block content %}
+    <!-- contact -->
+    <section class="contact py-5" id="contact">
+        <div class="container pt-md-5 pt-4">
+            <div class="title-heading-w3 text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+                <h3 class="title-style">Coder</h3>
+            </div>
+            <div class="main-grid-contact">
+                <div class="row">
+
+                    <!-- contact form -->
+                    <div class="col-lg-6 content-form-right p-0 order-lg-last order-first">
+                        <div class="form-w3ls p-5">
+                            <h4 class="mb-4 sec-title-w3">Coder Form</h4>
+                            <form method="POST" enctype="multipart/form-data" style="width:1000px">
+                                {% csrf_token %}
+                                {% comment %} <div class="row mb-3">
+                                    <div class="col-sm-6 form-group mb-sm-0 mb-3">
+                                        <input class="form-control" type="text" name="w3lName" id="w3lName"
+                                            placeholder="First Name" required="">
+                                    </div>
+                                    <div class="col-sm-6 form-group">
+                                        <input class="form-control" type="text" name="w3lName" id="w3lName"
+                                            placeholder="Last Name" required="">
+                                    </div>
+                                </div> {% endcomment %}
+                                <div class="form-group mb-3">
+                                    <input class="form-control" type="text" name="name" id="w3lSender"
+                                        placeholder="Buyer Name" required="">
+                                </div>
+                               
+                                <div class="form-group">
+                                    <textarea class="form-control" name="address" id="w3lMessage"
+                                        placeholder="Address" required=""></textarea>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input class="form-control" type="email" name="email" id="w3lSender"
+                                        placeholder="Email" required="">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input class="form-control" type="text" name="contact" id="w3lName"
+                                        placeholder="Phone Number" required="">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input class="form-control" type="text" name="qual" id="w3lName"
+                                        placeholder="Qualification" required="">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input class="form-control" type="text" name="exp" id="w3lName"
+                                        placeholder="Experience" required="">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <p>Bio Data</p>
+                                    <input class="form-control" type="file" name="bio" id="w3lName"
+                                        placeholder="Bio Data" required="">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <p>Photo</p>
+                                    <input class="form-control" type="file" name="photo" id="w3lName"
+                                        placeholder="photo" required="">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <input class="form-control" type="password" name="pwd" id="w3lName"
+                                        placeholder="Password" required="">
+                                </div>
+                                <div class="input-group1 text-end mt-4">
+                                    <button class="btn btn-style" type="submit">Submit </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var msg="{{msg}}";
+                if(msg!="")
+                {
+                    alert(msg);
+                }
+          
+        </script>
+    </section>
+    <!-- //contact -->
+
+   {% endblock %}
